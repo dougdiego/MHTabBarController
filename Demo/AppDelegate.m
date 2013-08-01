@@ -20,6 +20,7 @@
 
 	NSArray *viewControllers = @[listViewController1, listViewController2, listViewController3];
 	MHTabBarController *tabBarController = [[MHTabBarController alloc] init];
+    //tabBarController.pageIndicatorDirection = PageIndicatorDirectionDown;
 
 	tabBarController.delegate = self;
 	tabBarController.viewControllers = viewControllers;

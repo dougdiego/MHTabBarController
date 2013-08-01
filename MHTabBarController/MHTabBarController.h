@@ -20,6 +20,8 @@
  * THE SOFTWARE.
  */
 
+#import "DDPageIndicatorView.h"
+
 @protocol MHTabBarControllerDelegate;
 
 /*
@@ -32,6 +34,9 @@
 @property (nonatomic, weak) UIViewController *selectedViewController;
 @property (nonatomic, assign) NSUInteger selectedIndex;
 @property (nonatomic, weak) id <MHTabBarControllerDelegate> delegate;
+@property (strong, nonatomic) DDPageIndicatorView *pageIndicatorView;
+@property (assign, nonatomic) CGSize pageIndicatorViewSize;
+@property (assign, nonatomic) PageIndicatorDirection pageIndicatorDirection;
 
 - (void)setSelectedIndex:(NSUInteger)index animated:(BOOL)animated;
 - (void)setSelectedViewController:(UIViewController *)viewController animated:(BOOL)animated;

@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7B2C1D131683543D00542AC1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C1D121683543D00542AC1 /* Default-568h@2x.png */; };
-		7B2C1D1A1683544700542AC1 /* MHTabBarActiveTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C1D141683544700542AC1 /* MHTabBarActiveTab.png */; };
-		7B2C1D1B1683544700542AC1 /* MHTabBarActiveTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C1D151683544700542AC1 /* MHTabBarActiveTab@2x.png */; };
-		7B2C1D1C1683544700542AC1 /* MHTabBarInactiveTab.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C1D161683544700542AC1 /* MHTabBarInactiveTab.png */; };
-		7B2C1D1D1683544700542AC1 /* MHTabBarInactiveTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C1D171683544700542AC1 /* MHTabBarInactiveTab@2x.png */; };
-		7B2C1D1E1683544700542AC1 /* MHTabBarIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C1D181683544700542AC1 /* MHTabBarIndicator.png */; };
-		7B2C1D1F1683544700542AC1 /* MHTabBarIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C1D191683544700542AC1 /* MHTabBarIndicator@2x.png */; };
 		7B2C1D251683818100542AC1 /* Taijitu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C1D231683818100542AC1 /* Taijitu.png */; };
 		7B2C1D261683818100542AC1 /* Taijitu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C1D241683818100542AC1 /* Taijitu@2x.png */; };
 		7B5C62CC168242E9005C3BD4 /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C62CB168242E9005C3BD4 /* MHTabBarController.m */; };
@@ -24,16 +18,11 @@
 		7BCE96FB1469751600135C63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE96FA1469751600135C63 /* main.m */; };
 		7BCE96FF1469751600135C63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE96FE1469751600135C63 /* AppDelegate.m */; };
 		7BCE970D146975EA00135C63 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE970C146975EA00135C63 /* ListViewController.m */; };
+		91A3D36117A7F0BC00C40F86 /* DDPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A3D36017A7F0BC00C40F86 /* DDPageIndicatorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B2C1D121683543D00542AC1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		7B2C1D141683544700542AC1 /* MHTabBarActiveTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MHTabBarActiveTab.png; path = MHTabBarController/MHTabBarActiveTab.png; sourceTree = SOURCE_ROOT; };
-		7B2C1D151683544700542AC1 /* MHTabBarActiveTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MHTabBarActiveTab@2x.png"; path = "MHTabBarController/MHTabBarActiveTab@2x.png"; sourceTree = SOURCE_ROOT; };
-		7B2C1D161683544700542AC1 /* MHTabBarInactiveTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MHTabBarInactiveTab.png; path = MHTabBarController/MHTabBarInactiveTab.png; sourceTree = SOURCE_ROOT; };
-		7B2C1D171683544700542AC1 /* MHTabBarInactiveTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MHTabBarInactiveTab@2x.png"; path = "MHTabBarController/MHTabBarInactiveTab@2x.png"; sourceTree = SOURCE_ROOT; };
-		7B2C1D181683544700542AC1 /* MHTabBarIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MHTabBarIndicator.png; path = MHTabBarController/MHTabBarIndicator.png; sourceTree = SOURCE_ROOT; };
-		7B2C1D191683544700542AC1 /* MHTabBarIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MHTabBarIndicator@2x.png"; path = "MHTabBarController/MHTabBarIndicator@2x.png"; sourceTree = SOURCE_ROOT; };
 		7B2C1D231683818100542AC1 /* Taijitu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Taijitu.png; sourceTree = "<group>"; };
 		7B2C1D241683818100542AC1 /* Taijitu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Taijitu@2x.png"; sourceTree = "<group>"; };
 		7B5C62CA168242E9005C3BD4 /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHTabBarController.h; path = MHTabBarController/MHTabBarController.h; sourceTree = SOURCE_ROOT; };
@@ -50,6 +39,8 @@
 		7BCE96FE1469751600135C63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7BCE970B146975EA00135C63 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		7BCE970C146975EA00135C63 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		91A3D35F17A7F0BC00C40F86 /* DDPageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDPageIndicatorView.h; path = MHTabBarController/DDPageIndicatorView.h; sourceTree = SOURCE_ROOT; };
+		91A3D36017A7F0BC00C40F86 /* DDPageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDPageIndicatorView.m; path = MHTabBarController/DDPageIndicatorView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +72,8 @@
 			children = (
 				7B5C62CA168242E9005C3BD4 /* MHTabBarController.h */,
 				7B5C62CB168242E9005C3BD4 /* MHTabBarController.m */,
-				7B2C1D141683544700542AC1 /* MHTabBarActiveTab.png */,
-				7B2C1D151683544700542AC1 /* MHTabBarActiveTab@2x.png */,
-				7B2C1D161683544700542AC1 /* MHTabBarInactiveTab.png */,
-				7B2C1D171683544700542AC1 /* MHTabBarInactiveTab@2x.png */,
-				7B2C1D181683544700542AC1 /* MHTabBarIndicator.png */,
-				7B2C1D191683544700542AC1 /* MHTabBarIndicator@2x.png */,
+				91A3D35F17A7F0BC00C40F86 /* DDPageIndicatorView.h */,
+				91A3D36017A7F0BC00C40F86 /* DDPageIndicatorView.m */,
 			);
 			name = MHTabBarController;
 			path = Demo;
@@ -197,12 +184,6 @@
 			files = (
 				7BCE96F91469751600135C63 /* InfoPlist.strings in Resources */,
 				7B2C1D131683543D00542AC1 /* Default-568h@2x.png in Resources */,
-				7B2C1D1A1683544700542AC1 /* MHTabBarActiveTab.png in Resources */,
-				7B2C1D1B1683544700542AC1 /* MHTabBarActiveTab@2x.png in Resources */,
-				7B2C1D1C1683544700542AC1 /* MHTabBarInactiveTab.png in Resources */,
-				7B2C1D1D1683544700542AC1 /* MHTabBarInactiveTab@2x.png in Resources */,
-				7B2C1D1E1683544700542AC1 /* MHTabBarIndicator.png in Resources */,
-				7B2C1D1F1683544700542AC1 /* MHTabBarIndicator@2x.png in Resources */,
 				7B2C1D251683818100542AC1 /* Taijitu.png in Resources */,
 				7B2C1D261683818100542AC1 /* Taijitu@2x.png in Resources */,
 			);
@@ -219,6 +200,7 @@
 				7BCE96FF1469751600135C63 /* AppDelegate.m in Sources */,
 				7BCE970D146975EA00135C63 /* ListViewController.m in Sources */,
 				7B5C62CC168242E9005C3BD4 /* MHTabBarController.m in Sources */,
+				91A3D36117A7F0BC00C40F86 /* DDPageIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

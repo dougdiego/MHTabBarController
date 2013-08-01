@@ -22,6 +22,24 @@
 
 #import "MHTabBarController.h"
 
+// RGB color macro
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+// RGB color macro with alpha
+#define UIColorFromRGBWithAlpha(rgbValue,a) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
+
+// TAB Colors
+#define SELECTED_TAB_COLOR UIColorFromRGB(0xCF785B)
+#define SELECTED_TAB_TITLE_COLOR UIColorFromRGBWithAlpha(0xFFFFFF,0.5f)
+#define DESELECTED_TAB_COLOR UIColorFromRGB(0xF5EECD)
+#define DESELECTED_TAB_TITLE_COLOR UIColorFromRGB(0xAF553A)
+
 static const NSInteger TagOffset = 1000;
 
 @implementation MHTabBarController
@@ -48,10 +66,35 @@ static const NSInteger TagOffset = 1000;
 	contentContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	[self.view addSubview:contentContainerView];
 
-	indicatorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MHTabBarIndicator"]];
-	[self.view addSubview:indicatorImageView];
+	
+    self.pageIndicatorViewSize = CGSizeMake(17, 7);
+    if( self.pageIndicatorDirection == PageIndicatorDirectionDown ){
+        self.pageIndicatorView = [[DDPageIndicatorView alloc] initWithFrame:CGRectMake(0,
+                                                                                       self.tabBarHeight,
+                                                                                       self.pageIndicatorViewSize.width,
+                                                                                       self.pageIndicatorViewSize.height)];
+        self.pageIndicatorView.pageIndicatorDirection = PageIndicatorDirectionDown;
+        self.pageIndicatorView.color = SELECTED_TAB_COLOR;
+    } else {
+        
+        self.pageIndicatorView = [[DDPageIndicatorView alloc] initWithFrame:CGRectMake(0,
+                                                                                       self.tabBarHeight-self.pageIndicatorViewSize.height,
+                                                                                       self.pageIndicatorViewSize.width,
+                                                                                       self.pageIndicatorViewSize.height)];
+        self.pageIndicatorView.pageIndicatorDirection = PageIndicatorDirectionUp;
+        self.pageIndicatorView.color = UIColor.whiteColor;
+    }
+    
+    
+    [self.view addSubview:self.pageIndicatorView];
 
 	[self reloadTabButtons];
+}
+
+- (void)viewDidUnload
+{
+    self.pageIndicatorView = nil;
+    [super viewDidUnload];
 }
 
 - (void)viewWillLayoutSubviews
@@ -155,11 +198,10 @@ static const NSInteger TagOffset = 1000;
 
 - (void)centerIndicatorOnButton:(UIButton *)button
 {
-	CGRect rect = indicatorImageView.frame;
-	rect.origin.x = button.center.x - floorf(indicatorImageView.frame.size.width/2.0f);
-	rect.origin.y = self.tabBarHeight - indicatorImageView.frame.size.height;
-	indicatorImageView.frame = rect;
-	indicatorImageView.hidden = NO;
+	//self.pageIndicatorView.center = CGPointMake(button.center.x - floorf(self.pageIndicatorView.frame.size.width/2.0f),
+    //                                            self.pageIndicatorView.center.y);
+    self.pageIndicatorView.center = CGPointMake(button.center.x - self.pageIndicatorView.frame.size.width/2,
+                                                self.pageIndicatorView.center.y);
 }
 
 - (void)setViewControllers:(NSArray *)newViewControllers
@@ -334,23 +376,19 @@ static const NSInteger TagOffset = 1000;
 {
 	[button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 
-	UIImage *image = [[UIImage imageNamed:@"MHTabBarActiveTab"] stretchableImageWithLeftCapWidth:0 topCapHeight:0];
-	[button setBackgroundImage:image forState:UIControlStateNormal];
-	[button setBackgroundImage:image forState:UIControlStateHighlighted];
+	[button setBackgroundColor:SELECTED_TAB_COLOR];
 	
 	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	[button setTitleShadowColor:[UIColor colorWithWhite:0.0f alpha:0.5f] forState:UIControlStateNormal];
+	[button setTitleShadowColor:SELECTED_TAB_TITLE_COLOR forState:UIControlStateNormal];
 }
 
 - (void)deselectTabButton:(UIButton *)button
 {
 	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 
-	UIImage *image = [[UIImage imageNamed:@"MHTabBarInactiveTab"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
-	[button setBackgroundImage:image forState:UIControlStateNormal];
-	[button setBackgroundImage:image forState:UIControlStateHighlighted];
+	[button setBackgroundColor:DESELECTED_TAB_COLOR];
 
-	[button setTitleColor:[UIColor colorWithRed:175/255.0f green:85/255.0f blue:58/255.0f alpha:1.0f] forState:UIControlStateNormal];
+	[button setTitleColor:DESELECTED_TAB_TITLE_COLOR forState:UIControlStateNormal];
 	[button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
